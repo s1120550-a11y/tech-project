@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你的個人檔案 - 恐怖片、K-pop、手機遊戲</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/phosphor.js"></script>
+    <style>
+        /* 設定自訂動態效果 */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #f43f5e, 0 0 10px #f43f5e; }
+            50% { text-shadow: 0 0 10px #f43f5e, 0 0 20px #f43f5e, 0 0 30px #f43f5e; }
+            100% { text-shadow: 0 0 5px #f43f5e, 0 0 10px #f43f5e; }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* 將 glow 動畫應用於特定元素 */
+        .text-glow {
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        /* 將 glitch 動畫應用於特定元素 */
+        .glitch-on-hover:hover {
+            animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        }
+
+        /* 自訂滾動條樣式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #f43f5e;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-200 font-sans p-6 overflow-x-hidden">
+
+    <!-- 主容器，在桌面模式下置中並設定最大寬度 -->
+    <main class="max-w-2xl mx-auto flex flex-col items-center">
+
+        <!-- 個人檔案區塊 -->
+        <div class="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-fuchsia-600 shadow-xl glitch-on-hover">
+            <!-- 這裡可以替換成你的個人頭像圖片，使用 placehold.co 做為範例 -->
+            <img src="https://placehold.co/400x400/1e293b/d1d5db?text=Hi" alt="個人頭像" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-fuchsia-600 opacity-20 transition-all duration-300 hover:opacity-0"></div>
+        </div>
+
+        <!-- 名字與簡介 -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">
+                <span class="text-glow">你的名字</span>
+            </h1>
+            <p class="text-sm sm:text-base text-gray-400 max-w-sm mx-auto leading-relaxed">
+                一個沈浸在手機遊戲世界、享受恐怖片驚悚感，並跟著 K-pop 旋律舞動的高中生。
+            </p>
+        </div>
+
+        <!-- 連結區塊 -->
+        <div class="w-full flex flex-col space-y-4">
+            <!-- Github 連結 -->
+            <a href="https://github.com/你的用戶名" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center p-4 bg-gray-800 rounded-xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-700 hover:shadow-2xl">
+                <i class="ph ph-github-logo text-3xl mr-4 text-fuchsia-400"></i>
+                <span class="text-lg font-semibold text-gray-100">我的 GitHub 專案</span>
+            </a>
+
+            <!-- Email 連結 -->
+            <a href="mailto:你的email@example.com"
+               class="flex items-center justify-center p-4 bg-gray-800 rounded-xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-700 hover:shadow-2xl">
+                <i class="ph ph-envelope-simple text-3xl mr-4 text-sky-400"></i>
+                <span class="text-lg font-semibold text-gray-100">發送 E-mail 給我</span>
+            </a>
+
+            <!-- LinkedIn 連結 -->
+            <a href="https://www.linkedin.com/in/你的用戶名" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center p-4 bg-gray-800 rounded-xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-700 hover:shadow-2xl">
+                <i class="ph ph-linkedin-logo text-3xl mr-4 text-indigo-400"></i>
+                <span class="text-lg font-semibold text-gray-100">我的 LinkedIn 檔案</span>
+            </a>
+        </div>
+
+        <!-- IG Linktree 區塊 -->
+        <div class="w-full mt-12 text-center">
+            <h2 class="text-2xl font-bold text-gray-500 mb-6">
+                <span class="text-white glitch-on-hover">我的 Instagram</span>
+            </h2>
+
+            <!-- IG 連結網格 -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <!-- 這裡可以放你的 IG 連結，點擊後會連到你的 IG 貼文或 Reels -->
+                <a href="https://www.instagram.com/你的IG帳號" target="_blank" rel="noopener noreferrer"
+                   class="relative w-full h-36 bg-gray-800 rounded-xl overflow-hidden group transition-all duration-300 ease-in-out transform hover:scale-105">
+                    <!-- 這裡可以放你的 IG 貼文縮圖，使用 placehold.co 做為範例 -->
+                    <img src="https://placehold.co/300x300/f43f5e/ffffff?text=K-POP" alt="IG 貼文" class="w-full h-full object-cover">
+                    <!-- 懸停時出現的疊層 -->
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="ph ph-instagram-logo text-3xl text-white"></i>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/你的IG帳號" target="_blank" rel="noopener noreferrer"
+                   class="relative w-full h-36 bg-gray-800 rounded-xl overflow-hidden group transition-all duration-300 ease-in-out transform hover:scale-105">
+                    <img src="https://placehold.co/300x300/16a34a/ffffff?text=Horror" alt="IG 貼文" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="ph ph-instagram-logo text-3xl text-white"></i>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/你的IG帳號" target="_blank" rel="noopener noreferrer"
+                   class="relative w-full h-36 bg-gray-800 rounded-xl overflow-hidden group transition-all duration-300 ease-in-out transform hover:scale-105">
+                    <img src="https://placehold.co/300x300/0ea5e9/ffffff?text=Gaming" alt="IG 貼文" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="ph ph-instagram-logo text-3xl text-white"></i>
+                    </div>
+                </a>
+                
+                <!-- 這裡可以繼續新增更多 IG 貼文連結 -->
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
